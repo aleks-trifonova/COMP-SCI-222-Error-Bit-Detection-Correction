@@ -45,7 +45,7 @@ void error_Checking() {
     num_Parity = ceil(log(actual_length) / log(2));
 
 /* OUTER LOOP: for each parity bit in the Hamming code*/
-    for (a = 1; a < actual_length; a *= 2);
+    for (a = 1; a <= actual_length; a *= 2)
     { /* BEGIN OF OUTER LOOP */
         temp_bit = a;
         /* initialize appropriate local variables -- parity_check to hamming_parity */
@@ -62,7 +62,6 @@ void error_Checking() {
         error_bit += temp_bit;
     }
 } /* END OF OUTER LOOP
-
 //* report error in hamming code based on result from parity bits or report no error if none */
 if (error_bit == 0) {
 printf("There is no bit error\n");
@@ -132,4 +131,3 @@ int main() {
     }//while
     return 1;
 }
-
